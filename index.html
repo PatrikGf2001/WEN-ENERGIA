@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Pruebas UPS</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- libreria para PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="menu">
+
+<button onclick="mostrarFormulario('impedancia')">IMPEDANCIA</button>
+<button onclick="mostrarFormulario('descarga')">DESCARGA</button>
+
+</div>
+
+<!-- FORMULARIO IMPEDANCIA -->
+
+<div id="impedancia">
+
+<h1>PRUEBA DE IMPEDANCIA / RESISTENCIA INTERNA</h1>
+
+<div class="card">
+
+<h2>Datos generales</h2>
+
+<div class="grid">
+
+<input id="fecha" type="date">
+<input id="cu" placeholder="CU">
+<input id="local" placeholder="Local">
+<input id="ups" placeholder="UPS">
+<input id="tipo_bateria" placeholder="Tipo batería">
+<input id="num_bancos" placeholder="N° bancos">
+<input id="celdas_banco" placeholder="Celdas por banco">
+<input id="modelo_equipo" placeholder="Modelo equipo">
+<input id="estado" placeholder="Estado">
+<input id="temperatura" placeholder="Temperatura">
+
+</div>
+
+</div>
+
+<div class="card" id="reporte">
+
+<h2>Detalle por celda</h2>
+
+<button onclick="agregarFila()">Agregar fila</button>
+
+<table id="tabla">
+
+<thead>
+
+<tr>
+<th>Banco</th>
+<th>Celda</th>
+<th>Voltaje</th>
+<th>Impedancia</th>
+<th>Resultado</th>
+</tr>
+
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+<button onclick="guardarDatos()">Guardar</button>
+<button onclick="exportarPDF()">Exportar Reporte</button>
+<button onclick="limpiar()">Limpiar</button>
+
+</div>
+
+</div>
+
+
+<!-- FORMULARIO DESCARGA -->
+
+<div id="descarga" style="display:none">
+
+<h1>DESCARGA CONTROLADA POR BANCO</h1>
+
+<div class="card">
+
+<div class="grid">
+
+<input placeholder="Fecha">
+<input placeholder="CU">
+<input placeholder="Local">
+<input placeholder="UPS">
+<input placeholder="N° bancos">
+<input placeholder="Corriente total (A)">
+<input placeholder="Tiempo descarga">
+<input placeholder="Observación">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
